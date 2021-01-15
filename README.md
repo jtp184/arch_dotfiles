@@ -2,6 +2,8 @@
 
 Configuration files for arch linux
 
+![destkop screenshot(https://github.com/jtp184/arch_dotfiles/raw/main/ex.png)
+
 ## Installing
 
 ```bash
