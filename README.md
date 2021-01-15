@@ -7,7 +7,8 @@ Configuration files for arch linux
 ```bash
 git clone git@github.com:jtp184/arch_dotfiles.git
 cd arch_dotfiles
-cp -ri ./config/* ~/.config
 cp -ri ./home/* ~/
+mkdir -p ~/.config
+cp -ri ./config/* ~/.config
 
 ```
