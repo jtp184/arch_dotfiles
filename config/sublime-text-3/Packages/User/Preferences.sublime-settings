@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Packages/User/Jericho/Jericho.tmTheme",
+	"font_face": "JetBrains Mono",
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Default.sublime-theme"
+}

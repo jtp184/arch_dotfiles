@@ -1,0 +1,39 @@
+[user]
+	name = Justin Piotroski
+	email = justin.piotroski@gmail.com
+[core]
+	editor = subl -n -w
+	pager = less -R
+	excludesfile = ~/.gitignore_global
+[color]
+	ui = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	default = simple
+[help]
+	autocorrect = 30
+[alias]
+	aa = add .
+	bl = branch --list
+	cm = commit --message
+	co = checkout
+	cob = checkout -b
+	db = branch -D
+	df = diff
+	dfs = diff --staged
+	lg = log --graph --decorate --pretty=oneline --abbrev-commit
+        ll = log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	pu = push
+	pushup = push --set-upstream origin HEAD
+	re = restore
+	rm = rm --cached
+	rs = restore --staged
+	st = status
+[credential]
+	helper = cache --timeout=3600
+[pull]
+	ff = only

@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-max '/mnt/StarDrive/Pictures/Desktop Pictures/gettyc_center.png' '/mnt/StarDrive/Pictures/Desktop Pictures/gettyc_right.png' '/mnt/StarDrive/Pictures/Desktop Pictures/gettyc_left.png' 
