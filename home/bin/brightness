@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require 'bundler/inline'
+
+gemfile do
+  source 'http://rubygems.org'
+
+  gem 'tty-prompt'
+end
+
+cmd = "xrandr --output %{monitor} --brightness %{brightness}"
+
+prompt = TTY::Prompt.new(interrupt: -> { puts; abort })
+monitors = `xrandr | grep -w connected | cut -f '1' -d ' '`.lines.map(&:chomp)
+
+if ARGV[0] && ARGV[1]
+  if ARGV[0] == 'all'
+    monitors.each do |monitor|
+      system(cmd % { monitor: monitor, brightness: Float(ARGV[1]) })
+    end
+  else
+    system(cmd % { monitor: monitors[Integer(ARGV[0])], brightness: Float(ARGV[1]) })
+  end
+else
+  changes = prompt.multi_select('Which monitor(s)?', monitors)
+
+  ticks = (10..200).to_a
+                 .select { |v| v % 10 == 0 }
+                 .map { |v| (v / 100.0).round(2) }
+
+  updates = changes.map do |monitor|
+    brightness = prompt.slider("Brightness for #{monitor}", ticks, default: 1.0)
+    [monitor, brightness]
+  end
+
+  updates.each do |monitor, brightness|
+    system(cmd % { monitor: monitor, brightness: brightness })
+  end
+end
+
+
