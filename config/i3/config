@@ -74,10 +74,10 @@ bindsym $mod+q exec systemctl suspend
 bindsym $mod+n exec loginctl lock-session
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsim $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # resize windows
 bindsym $mod+Left resize grow width 10 px or 10 ppt
@@ -86,10 +86,10 @@ bindsym $mod+Up resize shrink height 10 px or 10 ppt
 bindsym $mod+Right resize shrink width 10 px or 10 ppt
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -171,7 +171,7 @@ bindsym $mod+Shift+e exec "i3-msg exit"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        output DisplayPort-0
+        output DisplayPort-1
         position top
         separator_symbol " | "
         status_command i3status -c ~/.config/i3/i3status/i3status.conf

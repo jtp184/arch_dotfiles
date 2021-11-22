@@ -2,8 +2,8 @@
 	name = Justin Piotroski
 	email = justin.piotroski@gmail.com
 [core]
-	editor = subl -n -w
-	pager = less -R
+	editor = vim
+	pager = bat
 	excludesfile = ~/.gitignore_global
 [color]
 	ui = true
@@ -24,9 +24,11 @@
 	cob = checkout -b
 	db = branch -D
 	df = diff
+	dfb = diff master HEAD
 	dfs = diff --staged
 	lg = log --graph --decorate --pretty=oneline --abbrev-commit
-        ll = log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	ll = log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	patch = add --patch
 	pu = push
 	pushup = push --set-upstream origin HEAD
 	re = restore
